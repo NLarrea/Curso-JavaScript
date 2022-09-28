@@ -1,0 +1,17 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Este es el primer proyecto de JavaScript con Node en OpenBootcamp",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "saludar": "node hola_mundo.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "helloworld",
+    "firstproyect"
+  ],
+  "author": "NLarrea",
+  "license": "ISC"
+}
