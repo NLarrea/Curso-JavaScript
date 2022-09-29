@@ -23,6 +23,7 @@ imprime lo siguiente:
 console.log(lista4[1]); // imprime [ 1, 'hola', true, undefined, null, 34 ]
 console.log(lista4[1][4]); // imprime null
 
+
 // OBJETOS
 const movil = {
     // atributos
@@ -46,6 +47,7 @@ console.log(movil.year); // imprime 2019
 // modificar datos
 movil.marca = "iphone";
 console.log(movil.marca); // imprime iphone
+
 
 // FECHAS
 // librerías de apoyo Moment.js

@@ -6,7 +6,7 @@ if(5 == 5){ // igualdad débil
 if(5 === 5){ // igualdad fuerte
     console.log("5 es muy igual a 5");
 }
-/* los dos iguales checkea únicamente el valor, mientras que los tres
+/* los dos iguales chequea únicamente el valor, mientras que los tres
 iguales compara el valor y el tipo */
 let a = 5;
 let b = "5";
@@ -18,6 +18,7 @@ if(a === b){
     console.log("A es igual a B - Fuerte");
     // no se imprime porque son de distintos tipos
 }
+
 
 // DESIGUALDAD
 let c = 4;
@@ -39,6 +40,7 @@ if(c !== e){
     console.log("C es diferente a E - Fuerte")
     // se imprime porque compara que sean diferentes en valor o en tipo
 }
+
 
 // MAYOR QUE / MENOR QUE
 let max = 10;

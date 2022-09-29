@@ -18,4 +18,4 @@ almacenar los datos en memoria. Este error también ocurre con las multiplicacio
 y es totalmente propio del lenguaje */
 
 // aplicar solución a este problema -> utilizar el operador round()
-console.log(Math.round((0.1 + 0.2)*100)/100); // 0.3
+console.log(Math.round((b + c)*100)/100); // 0.3

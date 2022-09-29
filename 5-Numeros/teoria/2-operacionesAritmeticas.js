@@ -14,6 +14,9 @@ console.log(a * b); // 16.8
 // división
 console.log(a / b); // 0.729166...7
 
+// potencia
+console.log(2 ** 3); // 8
+
 
 // REPRESENTACIÓN DE LOS NÚMEROS EN CADENAS DE TEXTO
 let a_s = a.toString();
