@@ -10,7 +10,7 @@ const result = arr2.every(valor => {
         return false;
     }
 })
-console.log(result); // true
+console.log(result); // true -> todos los valores son números
 
 const result2 = arr2.every(valor => {
     if(valor > 0){
@@ -20,7 +20,7 @@ const result2 = arr2.every(valor => {
         return false;
     }
 })
-console.log(result2); // false
+console.log(result2); // false -> no todos los valores son mayores que 0
 
 // forma corta (intentar hacerlo siempre así)
 const result2sort = arr2.every(valor => valor > 0);

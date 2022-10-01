@@ -1,4 +1,4 @@
-// LISTAS A PARTIR DE LISTAS
+// MÉTODOS AVANZADOS DE LISTAS
 
 // MÉTODO .map()
 const arr = ["Bilbao", "Durango", "Madrid", "Murcia"];
