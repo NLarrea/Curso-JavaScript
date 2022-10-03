@@ -50,6 +50,8 @@ const listaPeliculas = [
 ]
 console.log(listaPeliculas); // imprime todos los objetos
 // para ordenar se usará .sort() -> CUIDADO porque modifica el valor original
+/* al usar objeto.slice().sort() no se ve modificado el objeto original, porque
+hace una copia del mismo en la propia variable (objeto) */
 listaPeliculas.sort((a,b) => a.anyo - b.anyo);
 console.log(listaPeliculas);
 // imprime todos los objetos ordenador por anyo (de menor a mayor)
