@@ -20,6 +20,8 @@ console.log(obj.id); // 4
 // definir propiedad con variables
 const prop = "isDeveloper";
 console.log(obj[prop]); // true
+const prop2 = "nombre";
+console.log(obj[prop2]); // Naia
 // damos valor a variable y podemos acceder a propiedades a través de variables
 
 
@@ -50,8 +52,30 @@ const listaPeliculas = [
 ]
 console.log(listaPeliculas); // imprime todos los objetos
 // para ordenar se usará .sort() -> CUIDADO porque modifica el valor original
-/* al usar objeto.slice().sort() no se ve modificado el objeto original, porque
-hace una copia del mismo en la propia variable (objeto) */
 listaPeliculas.sort((a,b) => a.anyo - b.anyo);
 console.log(listaPeliculas);
 // imprime todos los objetos ordenador por anyo (de menor a mayor)
+
+/* al usar objeto.slice().sort() no se ve modificado el objeto original, porque
+hace una copia del mismo en la propia variable (objeto) */
+const listaOriginal = [
+    {nombre: "Naia", edad: 24},
+    {nombre: "Cristina", edad: 28},
+    {nombre: "Irene", edad: 21},
+    {nombre: "Irantzu", edad: 33}
+];
+const listaOrdenada = listaOriginal.slice().sort((a,b) => a.edad - b.edad);
+console.log(listaOrdenada);
+/* imprime:
+[ { nombre: 'Irene', edad: 21 },
+  { nombre: 'Naia', edad: 24 },
+  { nombre: 'Cristina', edad: 28 },
+  { nombre: 'Irantzu', edad: 33 } ]
+*/
+console.log(listaOriginal);
+/* imprime:
+[ { nombre: 'Naia', edad: 24 },
+  { nombre: 'Cristina', edad: 28 },
+  { nombre: 'Irene', edad: 21 },
+  { nombre: 'Irantzu', edad: 33 } ]
+*/

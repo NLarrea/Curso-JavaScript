@@ -16,6 +16,10 @@ mySet = new Set(array);
 console.log(array); // [ 1, 2, 3, 4, 5, 6, 2, 4, 'hola', {id: 5} ]
 console.log(mySet); // Set { 1, 2, 3, 4, 5, 6, 'hola, {id: 5} }
 
+// otra forma de declarar un set
+const set2 = new Set(["elemento1", 2, false, 2, null, undefined]); // el segundo 2 no lo coge
+console.log(set2); // Set { 'elemento1', 2, false, null, undefined }
+
 
 // MÉTODOS PARA AÑADIR O ELIMINAR VALORES
 // .add() -> añadir valores
