@@ -1,5 +1,23 @@
 // CLASES
 
+// SINTAXIS DE LAS CLASES
+class NombreDeClase {
+    // atributos públicos con valores fijos para todas las instancias -> NOTA*
+    atributo1 = "valor1";
+    atributo2 = 2;
+    atributo3 = ["valor3.1", 3.2, false];
+    // método constructor
+    constructor(valor4){
+        this.atributo4 = valor4; // atributo público cuyo valor cambia al crear cada instancia
+    }
+    // metodo de la clase
+    metodoCualquiera(){
+        // código del método
+    }
+}
+// NOTA*: si son públicos y tienen valores diferentes para cada instancia, no deben colocarse aquí
+
+
 // DECLARACIÓN -> class
 class Persona { // objeto de tipo Persona
     // variables que forman parte de la persona -> propiedades o atributos

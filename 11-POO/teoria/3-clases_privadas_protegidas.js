@@ -30,23 +30,22 @@ class Persona2 {
     // solo se puede acceder a ellos desde dentro de esta clase
     #nombre
     #edad
-    #obtenEdad
     // Protected -> _
     // solo se puede acceder a ellos desde dentro de esta clase y desde sus descendientes
     _isDeveloper = true
     // método constructor
-    constructor(nom, age){
-        this.#nombre = nom;
+    constructor(name, age){
+        this.#nombre = name;
         this.#edad = age;
     }
     // métodos que forman parte de la persona
     saludo(){
-        console.log(`Hola, mi nombre es ${this.#nombre}, tengo ${this.#edad} años.`);
+        console.log(`Hola, mi nombre es ${this.#nombre}, tengo ${this.#obtenEdad()} años.`);
     }
     obtenNombre(){
         return this.#nombre;
     }
-    #obtenEdad(){
+    #obtenEdad(){ // no tiene mucho sentido hacerlo así, pero es para el ejemplo
         return this.#edad;
     }
 }
