@@ -1,21 +1,22 @@
 // ACTIVACIÓN O DESACTIVACIÓN MOMENTÁNEA DE ESLINT
 
-/* desactivar ESLint del todo -> eslint-disable / eslint-enable */
 
 // línea sin "errores"
 const nombre = "Naia";
 
 // bloque con "errores" pero ESLint deshabilitado
 /* eslint-disable */
-const nombre2 = 'María'
+const nombre2 = 'María';
+const nombre3 = "Cris"
 /* eslint-enable */
 
-// línea a la que le decimos que no tenga en cuenta "errores"
+// línea a la que le decimos que no tenga en cuenta ningún tipo de "error"
 const comillasSimples = 'Esto es un string'; // eslint-disable-line
 
-// línea a la que le decimos que no tenga en cuenta el punto y coma
+// línea a la que le decimos que no tenga en cuenta el "error" del punto y coma
 const sinPuntoYComa = "En esta línea no hay punto y coma" // eslint-disable-line semi
 
+// se deshabilita el "error" de la indentación en la siguiente línea de programa solo
 /* eslint-disable-next-line indent */
   const espacios = "Esta línea tiene dos espacios por delante, pero no se tiene en cuenta";
 
