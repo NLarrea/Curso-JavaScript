@@ -1,0 +1,21 @@
+// ARCHIVO DE CONFIGURACIÓN DE REGLAS ESLINT
+/*
+vamos a la página de ESLint y entramos en configuración
+https://eslint.org/docs/latest/user-guide/configuring/configuration-files
+
+buscamos códigos de ejemplo y copiamos y pegamos alguno
+
+Vamos a indicar que siempre haya que usar dobles comillas y que nunca haga falta usar punto y coma
+Volvemos a la página y entramos a las reglas
+*/
+
+{
+    "rules": {
+        // Override our default settings just for this directory
+        "eqeqeq": "warn",
+        "strict": "off",
+        "quotes": ["warn", "double"], // que siempre sean comillas dobles -> sino, que de aviso
+        "semi": ["error", "always"], // que siempre tengamos que poner punto y coma (semicolon) -> sino, error
+        "no-dupe-keys": "error" // que de error siempre que haya un objeto con dos atributos / funciones iguales
+    }
+}

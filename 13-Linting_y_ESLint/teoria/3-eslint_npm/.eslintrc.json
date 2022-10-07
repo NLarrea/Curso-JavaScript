@@ -1,0 +1,32 @@
+{
+    "env": { // environment
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest" // última versión de ECMAScript
+    },
+    "rules": {
+        "indent": [ // indentación usando tab en vez de spaces
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [ // uso windows
+            "error",
+            "windows"
+        ],
+        "quotes": [ // comillas dobles
+            "error",
+            "double"
+        ],
+        "semi": [ // poner siempre punto y coma
+            "error",
+            "always"
+        ],
+        "no-unused-vars": "off" // que no de error por no estar usando una variable
+    }
+}
