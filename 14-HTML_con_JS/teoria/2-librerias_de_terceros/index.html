@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librerías de terceros</title>
+</head>
+<body>
+    <h1>Esto es un título</h1>
+    <p id="parrafo">Esto es un párrafo</p>
+    <span id="myElement"></span>
+    <!-- FORMA 1 DE IMPORTAR: nuestro archivo index.js -->
+    <script src="index.js"></script>
+    <!-- FORMA 2 DE IMPORTAR: código importado de: https://www.typeitjs.com/docs/vanilla -->
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <!-- FORMA 3 DE IMPORTAR: copiar y pegar código -> mala práctica, es mejor que tenga su propio archivo -->
+    <!-- <script>
+        new TypeIt("#myElement", {
+            strings: "This is what will be typed!",
+        }).go();
+    </script> -->
+    <!-- copiamos el código comentado en animaciones.js y lo importamos -->
+    <script src="animaciones.js"></script>
+</body>
+</html>
