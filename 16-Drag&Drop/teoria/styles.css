@@ -1,0 +1,24 @@
+.seccion {
+    background-color: darkslategrey;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.parrafo {
+    background-color: white;
+    padding: 1rem;
+}
+
+/* CLASE CREADA PARA LOS ELEMENTOS CUANDO ESTÁN SIENDO ARRASTRADOS */
+.parrafo.dragging {
+    opacity: 0.3;
+}
+
+.img-fantasma {
+    width: 300px;
+    height: 300px;
+    background-color: blueviolet;
+    /* pequeño truco para que no se vea en la pantalla y no estorbe */
+    position: absolute;
+    left: -100vW;
+}
