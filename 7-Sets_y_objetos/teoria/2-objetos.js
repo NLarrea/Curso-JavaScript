@@ -79,3 +79,13 @@ console.log(listaOriginal);
   { nombre: 'Irene', edad: 21 },
   { nombre: 'Irantzu', edad: 33 } ]
 */
+
+
+// OBTENER KEY SABIENDO EL VALUE
+
+/*
+function getKeyByValue(object, value){
+    return Object.keys(object).find(key => object[key] === value);
+}
+console.log(getKeyByValue(morseDic, ".-")); // A
+*/
