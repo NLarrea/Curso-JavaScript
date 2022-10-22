@@ -1,6 +1,10 @@
 // MÉTODOS AVANZADOS DE LISTAS
 
 // MÉTODO .map()
+/* .map() -> permite iterar todos los elementos de un arreglo, retorna uno nuevo, dada una determinada
+función a ejecutar en cada elemento del array */
+/* .forEach() -> es igual que .map(), pero sin retornar valores nuevos, solo recorre el array ejecutando
+la función en cada elemento (repito: sin devolverlo) */
 const arr = ["Bilbao", "Durango", "Madrid", "Murcia"];
 const val = arr.forEach(element => {
     console.log(element); // Bilbao, San Sebastián, Madrid, Murcia, Durango
@@ -19,6 +23,8 @@ console.log(newArr); // [ '1 - Bilbao', '2 - Durango', '3 - Madrid', '4 - Murcia
 
 
 // MÉTODO .filter()
+/* .find() -> retorna el primer elemento que encuentre cumpliendo los requisitos definidos
+.filter() -> retorna todos los elementos que encuentre cumpliendo los requisitos definidos */
 const listaObjetos = [
     {nombre: "Leire", edad: 35},
     {nombre: "Gorka", edad: 34},
@@ -45,7 +51,9 @@ const newList = listaObjetos.filter(obj => obj.nombre !== "Miguel");
 console.log(newList); // devuelve todos menos { nombre: 'Miguel', edad: 28 }
 
 
-// .reduce() -> obtener algo a partir de una lista (lo que sea, objeto, valor, etc.)
+// MÉTODO .reduce()
+/* .reduce() -> permite "reducir" o "transformar" los elementos de un arreglo en uno nuevo
+y de único valor */
 const valores = [3, 56, 23, 5, 90, 100];
 const suma = valores.reduce((acumulado, current, i, arrayOriginal) => {
     console.log(acumulado); // 3, 59, 82, 87, 177 -> no se ve el 277 porque no vuelve a entrar aquí
