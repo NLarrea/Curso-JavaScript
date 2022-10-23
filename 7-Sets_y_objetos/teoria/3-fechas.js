@@ -34,6 +34,11 @@ console.log(fecha2 === fecha5); // false
 console.log(fecha2.getTime() === fecha5.getTime()); // true
 
 
+// COMPROBAR SI UNA FECHA DADA EN FORMATO STRING ES CORRECTA
+const isDateValid = str1 => !Number.isNaN(new Date(str1).valueOf());
+console.log(isDateValid(str1));
+
+
 // OBTENER EL DÍA, MES Y AÑO DE UNA FECHA
 const dia = fecha.getDate();
 const mes = fecha.getMonth() + 1;
