@@ -12,6 +12,15 @@ internamente sin tener que decírselo nosotros. La forma de declarar números ha
 no es común en absoluto y solo se usa en casos concretos */
 
 
+// CREAR RANGOS DE NÚMEROS
+const range = (start, end) => Array.from('x'.repeat(end - start), (_, i) => start + i);
+/* creamos una función que guardamos en la constante "range". Lo que hace es crear un array de 'x' repitiendo
+las 'x' (end-start) veces. Pero en vez de devolver ese array, con su index (_, i) y una función flecha
+indica que "cambie el valor del array de 'x'" por "star + i", por lo que se crea un rango.
+(_, i) -> lo que hace es ignorar el valor de 'x' y quedarse solo con el index (como pasa con las funciones
+.forEach, donde el primer parámetro es el currentValue y el segundo el index), lo que hace "_" es ignorar el current */
+
+
 // NaN = Not a Number - Infinity
 /* significa que estamos intentando utilizar un método exclusivo de variables de tipo
 numéricas en algo que no es un número, entonces nos devuelve NaN */
