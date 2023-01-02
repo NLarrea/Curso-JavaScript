@@ -6,13 +6,13 @@
   "scripts": {
     "start": "node index.js",
     "saludar": "node hola_mundo.js",
-    "ejercicio1": "node ../Ejercicio1.js",
+    "ejercicio1": "node ../../EJERCICIOS/01-Primer_proyecto/Ejercicio1.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "helloworld",
     "firstproyect"
   ],
-  "author": "NLarrea",
+  "author": "nlarrea",
   "license": "ISC"
 }
