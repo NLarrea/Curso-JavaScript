@@ -34,6 +34,8 @@ console.log(random(10, 5));
 console.log(random(5, 10));
 // número aleatorio del 0 al 4 (ambos incluidos)
 console.log(random(5));
+// número aleatorio del -5 al 4 (ambos incluidos)
+console.log(random(-5, 5));
 
 
 // NaN = Not a Number - Infinity
