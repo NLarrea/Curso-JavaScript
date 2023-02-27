@@ -21,6 +21,21 @@ indica que "cambie el valor del array de 'x'" por "star + i", por lo que se crea
 .forEach, donde el primer parámetro es el currentValue y el segundo el index), lo que hace "_" es ignorar el current */
 
 
+// CREAR NÚMEROS ALEATORIOS ENTRE DOS VALORES
+const random = (minValue, maxValue) => {
+    maxValue = maxValue | 0;    // si solo se introduce un valor, maxValue = 0
+    // aseguramos que minValue sea el pequeño y maxValue el mayor
+    [minValue, maxValue] = [Math.min(minValue, maxValue), Math.max(minValue, maxValue)];
+    // devolver aleatorio entre minValue (incluido) y maxValue (no incluido)
+    return Math.floor(Math.random() * (maxValue - minValue) + minValue);
+};
+// número aleatorio del 5 al 9 (ambos incluidos)
+console.log(random(10, 5));
+console.log(random(5, 10));
+// número aleatorio del 0 al 4 (ambos incluidos)
+console.log(random(5));
+
+
 // NaN = Not a Number - Infinity
 /* significa que estamos intentando utilizar un método exclusivo de variables de tipo
 numéricas en algo que no es un número, entonces nos devuelve NaN */
