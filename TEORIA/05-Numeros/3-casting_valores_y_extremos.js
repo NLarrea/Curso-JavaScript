@@ -1,24 +1,48 @@
 // VALORES NUMÉRICOS A PARTIR DE LITERALES
-let a = 2; // forma típica de definir números
+
+let a = 2;                  // forma típica de definir números
 // hay otra forma de hacerlo:
 let b = new Number(3);
-console.log(a); // 2
-console.log(b); // Number 3 {} -> aun así, se sigue comportando como un 3
-console.log(a + b); // 5
-console.log(b.valueOf()); // 3
-/* cuando hacemos "A + B", el intérprete ya está haciendo el valueOf() del número
-internamente sin tener que decírselo nosotros. La forma de declarar números haciendo
+console.log(a);             // 2
+console.log(b);             // Number 3 {} -> se sigue comportando como un 3
+console.log(a + b);         // 5
+console.log(b.valueOf());   // 3
+/*
+cuando hacemos "A + B", el intérprete ya está haciendo el valueOf() del número
+internamente sin tener que decírselo nosotros. La forma de declarar números
+haciendo
     let b = new Number(3);
-no es común en absoluto y solo se usa en casos concretos */
+no es común en absoluto y solo se usa en casos concretos
+*/
 
 
 // CREAR RANGOS DE NÚMEROS
+
 const range = (start, end) => Array.from('x'.repeat(end - start), (_, i) => start + i);
-/* creamos una función que guardamos en la constante "range". Lo que hace es crear un array de 'x' repitiendo
-las 'x' (end-start) veces. Pero en vez de devolver ese array, con su index (_, i) y una función flecha
-indica que "cambie el valor del array de 'x'" por "star + i", por lo que se crea un rango.
-(_, i) -> lo que hace es ignorar el valor de 'x' y quedarse solo con el index (como pasa con las funciones
-.forEach, donde el primer parámetro es el currentValue y el segundo el index), lo que hace "_" es ignorar el current */
+
+/*
+creamos una función que guardamos en la constante "range". Lo que hace es crear
+un array de 'x' repitiendo las 'x' (end-start) veces. Pero en vez de devolver
+ese array, con su index (_, i) y una función flecha indica que "cambie el valor
+del array de 'x'" por "star + i", por lo que se crea un rango.
+
+(_, i) -> lo que hace es ignorar el valor de 'x' y quedarse solo con el index
+(como pasa con las funciones .forEach(), donde el primer parámetro es el
+currentValue y el segundo el index), lo que hace "_" es ignorar el valor
+*/
+
+/* Array.from(iterable, mapfn)
+iterable -> An iterable object to convert to an array.
+mapfn -> A mapping function to call on every element of the array.
+*/
+
+const rangeMejorado = (start, end) => {
+    // si solo se introduce un valor, end = 0
+    end = end | 0;
+    // start = valor más bajo, end = valor más alto
+    [start, end] = [Math.min(start, end), Math.max(start, end)]
+    return Array.from('x'.repeat(end - start), (_, i) => start + i)
+};
 
 
 // CREAR NÚMEROS ALEATORIOS ENTRE DOS VALORES
