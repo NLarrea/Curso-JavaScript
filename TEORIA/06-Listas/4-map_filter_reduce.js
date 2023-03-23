@@ -1,30 +1,44 @@
 // MÉTODOS AVANZADOS DE LISTAS
 
 // MÉTODO .map()
-/* .map() -> permite iterar todos los elementos de un arreglo, retorna uno nuevo, dada una determinada
-función a ejecutar en cada elemento del array */
-/* .forEach() -> es igual que .map(), pero sin retornar valores nuevos, solo recorre el array ejecutando
-la función en cada elemento (repito: sin devolverlo) */
+
+/* .map() -> permite iterar todos los elementos de un arreglo, retorna uno
+nuevo, dada una determinada función a ejecutar en cada elemento del array */
+
+/* .forEach() -> es igual que .map(), pero sin retornar valores nuevos, solo
+recorre el array ejecutando la función en cada elemento
+(repito: sin devolverlo) */
+
 const arr = ["Bilbao", "Durango", "Madrid", "Murcia"];
 const val = arr.forEach(element => {
-    console.log(element); // Bilbao, San Sebastián, Madrid, Murcia, Durango
+    console.log(element);   // Bilbao, Durango, Madrid, Murcia
 });
-console.log(val); // undefined -> porque el forEach en realidad no tiene objetivo concreto
+console.log(val);
+// undefined -> porque el forEach en realidad no tiene objetivo concreto
+
 
 // solución: usar .map()
 const newArr = arr.map((valor, index) => {
     return `${index+1} - ${valor}`; // index+1 porque empieza en 0
 })
-console.log(newArr); // [ '1 - Bilbao', '2 - Durango', '3 - Madrid', '4 - Murcia' ]
+console.log(newArr);        // [ '1 - Bilbao', '2 - Durango', '3 - Madrid', '4 - Murcia' ]
+
 
 // se podría hacer de forma reducida:
 const newArrShorter = arr.map((valor, indice) => `${indice} - ${valor}`);
-console.log(newArr); // [ '1 - Bilbao', '2 - Durango', '3 - Madrid', '4 - Murcia' ]
+console.log(newArr);        // [ '1 - Bilbao', '2 - Durango', '3 - Madrid', '4 - Murcia' ]
+
 
 
 // MÉTODO .filter()
-/* .find() -> retorna el primer elemento que encuentre cumpliendo los requisitos definidos
-.filter() -> retorna todos los elementos que encuentre cumpliendo los requisitos definidos */
+
+/*
+.find() -> retorna el primer elemento que encuentre cumpliendo los requisitos
+definidos
+
+.filter() -> retorna todos los elementos que encuentre cumpliendo los
+requisitos definidos
+*/
 const listaObjetos = [
     {nombre: "Leire", edad: 35},
     {nombre: "Gorka", edad: 34},
@@ -40,26 +54,51 @@ const mayoresDe30 = listaObjetos.filter(obj => {
         return false;
     }
 })
-console.log(mayoresDe30); // [ { nombre: 'Leire', edad: 35 }, { nombre: 'Gorka', edad: 34 } ]
+console.log(mayoresDe30);
+// [ { nombre: 'Leire', edad: 35 }, { nombre: 'Gorka', edad: 34 } ]
+
 
 // forma reducida
 const mayoresDe30reducido = listaObjetos.filter(obj => obj.edad > 30);
-console.log(mayoresDe30reducido); // [ { nombre: 'Leire', edad: 35 }, { nombre: 'Gorka', edad: 34 } ]
+console.log(mayoresDe30reducido);
+// [ { nombre: 'Leire', edad: 35 }, { nombre: 'Gorka', edad: 34 } ]
+
 
 // si queremos obtener todas las personas menos 1
 const newList = listaObjetos.filter(obj => obj.nombre !== "Miguel");
-console.log(newList); // devuelve todos menos { nombre: 'Miguel', edad: 28 }
+console.log(newList);
+// devuelve todos menos { nombre: 'Miguel', edad: 28 }
+
 
 
 // MÉTODO .reduce()
-/* .reduce() -> permite "reducir" o "transformar" los elementos de un arreglo en uno nuevo
-y de único valor */
+
+/*
+.reduce() -> permite "reducir" o "transformar" los elementos de un arreglo en
+uno nuevo y de único valor
+*/
 const valores = [3, 56, 23, 5, 90, 100];
 const suma = valores.reduce((acumulado, current, i, arrayOriginal) => {
-    console.log(acumulado); // 3, 59, 82, 87, 177 -> no se ve el 277 porque no vuelve a entrar aquí
-    console.log(current); // 56, 23, 5, 90, 100
-    console.log(i); // 1, 2, 3, 4, 5
-    console.log(arrayOriginal); // [ 3, 56, 23, 5, 90, 100 ] -> la repite cada vez que itera -> 5 veces en este caso
-    return acumulado + current; // sería como hacer "suma += valores[i]" en un for
+    console.log(acumulado);         // 3, 59, 82, 87, 177 -> no se ve el 277 porque no vuelve a entrar aquí
+    console.log(current);           // 56, 23, 5, 90, 100
+    console.log(i);                 // 1, 2, 3, 4, 5
+    console.log(arrayOriginal);     // [3, 56, 23, 5, 90, 100] -> la repite cada vez que itera
+    return acumulado + current;     // sería como hacer "suma += valores[i]" en un for
 })
-console.log(suma); // 277
+
+console.log(suma);                  // 277
+
+
+// saber qué elemento en una lista tiene el valor más alto
+const biggest = valores.reduce((biggest, current) => current > biggest ? current : biggest);
+
+console.log(biggest);               // 100
+
+
+// saber cuál es la palabra más larga
+const names = ['naia', 'cristina', 'june', 'clara', 'veronica']
+const longest = names.reduce((longest, current) => {
+    return current.length > longest.length ? current : longest
+});
+
+console.log(longest);               // cristina
