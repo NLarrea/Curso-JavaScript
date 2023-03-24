@@ -1,4 +1,5 @@
 // DECLARACIÓN DE VARIABLES
+
 var variableTipoVar;
 let variableTipoLet;
 
@@ -20,32 +21,37 @@ console.log(b);
 b = 5;
 console.log(b);
 
+
+
 // DIFERENCIAS ENTRE var Y let
 /* 
-var afecta a todo el código y let solo afecta al bloque donde la
-variable esté siendo declarada. Mirar el ejemplo de abajo
- */
+var afecta a todo el código y let solo afecta al bloque donde la variable esté
+siendo declarada. Mirar el ejemplo de abajo
+*/
 
 var variable = "hola soy una variable VAR";
-for(var i=0; i<3; i++){
+for (var i=0; i<3; i++) {
     variable = "soy la segunda variable";
 }
-console.log(variable); // imprime "soy la segunda variable"
+console.log(variable);      // imprime "soy la segunda variable"
+
 
 let variableLet = "hola soy una variable LET";
 for(let i=0; i<3; i++){
     let variableLet = "cambiamos el valor de LET";
 }
-console.log(variableLet); // imprime "hola soy una variable LET"
+console.log(variableLet);   // imprime "hola soy una variable LET"
+
+
 
 // TIPEOF -> indica de qué tipo es una variable
-console.log(typeof 1) // number
-console.log(typeof true) // boolean
-console.log(typeof null) // object
-console.log(typeof variableLet) // string
-console.log(typeof variableTipoLet) // undefined, porque no le hemos puesto ningún valor
+console.log(typeof 1)                   // number
+console.log(typeof true)                // boolean
+console.log(typeof null)                // object
+console.log(typeof variableLet)         // string
+console.log(typeof variableTipoLet)     // undefined -> no tiene valor asignado
 
 var num = 1;
-console.log(typeof num); // number
+console.log(typeof num);                // number
 num = "hola";
-console.log(typeof num); // string
+console.log(typeof num);                // string
