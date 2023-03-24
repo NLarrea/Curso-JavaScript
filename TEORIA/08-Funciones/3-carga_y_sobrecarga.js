@@ -1,12 +1,15 @@
 // CARGA Y SOBRECARGA DE FUNCIONES
 
-function saludar(){
+function saludar() {
     hola();
 }
-function hola(){
+
+function hola() {
     console.log("Hola! Soy la función hola()");
 }
+
 saludar(); // se imprime: Hola! Soy la función hola()
+
 /* 
 Carga de las funciones:
 1. global()
@@ -18,7 +21,7 @@ Carga de las funciones:
 stack overflow -> sobrecarga de funciones. Puede pasar en funciones recursivas,
 aquellas en las que se llama a sí mismas:
 
-function recursiva(){
+function recursiva() {
     recursiva();
 }
 
