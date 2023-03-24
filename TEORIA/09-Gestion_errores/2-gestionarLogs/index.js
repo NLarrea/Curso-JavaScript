@@ -7,29 +7,35 @@ console.debug("Esto es un mensaje de debug");
 console.warn("Esto es un mensaje de advertencia");
 console.error("Esto es un error");
 
-/* todos esos datos solo se ven por pantalla, pero realmente no queremos tener que estar
-monitorizando en tiempo real para verlos, sino que nos gustaría que se guardaran en algún
-lugar donde poder consultar después los datos -> winston (https://www.npmjs.com/package/winston)
+/*
+todos esos datos solo se ven por pantalla, pero realmente no queremos tener
+que estar monitorizando en tiempo real para verlos, sino que nos gustaría que
+se guardaran en algún lugar donde poder consultar después los datos ->
+    -> winston (https://www.npmjs.com/package/winston)
 
 escribimos en la terminal: npm install winston
-Se nos creará una carpeta llamada node-modules. Ahora, en vez de usar console.log(), vamos a
-usar lo que nos dice la librería de winston
+Se nos creará una carpeta llamada node-modules. Ahora, en vez de usar
+console.log(), vamos a usar lo que nos dice la librería de winston
 */
 
+
+
 /* ESTÁ COMENTADO PARA SIMULAR QUE LO HE QUITADO. EXPLICACIONES ABAJO
+
 const winston = require('winston');
 const logger = winston.createLogger({
-    level: 'debug', // cambiamos 'info' por 'debug'
+    level: 'debug',                             // cambiamos 'info' por 'debug'
     format: winston.format.json(),
-    defaultMeta: { service: 'user-service' }, // mensaje estándar, de momento no nos sirve
-    transports: [ // estas son todas las acciones que se van a ejecutar cada vez que haya un log
-      //
-      // - Write all logs with importance level of `error` or less to `error.log`
-      // - Write all logs with importance level of `info` or less to `combined.log`
-      //
-      new winston.transports.Console(), // para que se muestren los logger también por pantalla
-      new winston.transports.File({ filename: 'error.log', level: 'error' }),
-      new winston.transports.File({ filename: 'combined.log' }),
+    defaultMeta: { service: 'user-service' },   // mensaje estándar, de momento no nos sirve
+    transports: [ 
+        // estas son todas las acciones que se van a ejecutar cada vez que haya un log
+        //
+        // - Write all logs with importance level of `error` or less to `error.log`
+        // - Write all logs with importance level of `info` or less to `combined.log`
+        //
+        new winston.transports.Console(),       // para que se muestren los logger también por pantalla
+        new winston.transports.File({ filename: 'error.log', level: 'error' }),
+        new winston.transports.File({ filename: 'combined.log' }),
     ],
 });
 */
@@ -39,9 +45,12 @@ logger.info("Hola esto es un mensaje informativo");
 logger.debug("Esto es un mensaje de debug");
 logger.warn("Esto es un mensaje de advertencia");
 logger.error("Esto es un error");
+
 // volvemos a escribir en la terminal: npm start
-/* en la carpeta de la sesión 9 se nos crearán unos archivos: combined.log y error.log
-con todos los errores que hemos lanzado (menos el escrito en logger.debug()) */
+
+/* en la carpeta de la sesión 9 se nos crearán unos archivos: combined.log y
+error.log con todos los errores que hemos lanzado (menos el escrito en
+logger.debug()) */
 
 /* en error.log solo nos guarda los de tipo error */
 
