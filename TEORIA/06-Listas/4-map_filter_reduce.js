@@ -2,43 +2,49 @@
 
 // MÉTODO .map()
 
-/* .map() -> permite iterar todos los elementos de un arreglo, retorna uno
-nuevo, dada una determinada función a ejecutar en cada elemento del array */
+/*
+.map() -> permite iterar todos los elementos de un arreglo, retorna uno nuevo,
+dada una determinada función a ejecutar en cada elemento del array
 
-/* .forEach() -> es igual que .map(), pero sin retornar valores nuevos, solo
-recorre el array ejecutando la función en cada elemento
-(repito: sin devolverlo) */
+.forEach() -> es igual que .map(), pero sin retornar valores nuevos, solo
+recorre el array ejecutando la función en cada elemento (sin devolverlo)
+*/
 
 const arr = ["Bilbao", "Durango", "Madrid", "Murcia"];
 const val = arr.forEach(element => {
-    console.log(element);   // Bilbao, Durango, Madrid, Murcia
+    console.log(element);               // Bilbao, Durango, Madrid, Murcia
 });
+
 console.log(val);
 // undefined -> porque el forEach en realidad no tiene objetivo concreto
 
 
 // solución: usar .map()
 const newArr = arr.map((valor, index) => {
-    return `${index+1} - ${valor}`; // index+1 porque empieza en 0
-})
-console.log(newArr);        // [ '1 - Bilbao', '2 - Durango', '3 - Madrid', '4 - Murcia' ]
+    return `${index+1} - ${valor}`;     // index+1 porque empieza en 0
+});
+
+console.log(newArr);
+// [ '1 - Bilbao', '2 - Durango', '3 - Madrid', '4 - Murcia' ]
 
 
 // se podría hacer de forma reducida:
 const newArrShorter = arr.map((valor, indice) => `${indice} - ${valor}`);
-console.log(newArr);        // [ '1 - Bilbao', '2 - Durango', '3 - Madrid', '4 - Murcia' ]
+console.log(newArr);
+// [ '1 - Bilbao', '2 - Durango', '3 - Madrid', '4 - Murcia' ]
 
 
 
 // MÉTODO .filter()
 
 /*
-.find() -> retorna el primer elemento que encuentre cumpliendo los requisitos
-definidos
+.find() -> retorna el primer elemento que encuentre cumpliendo los
+requisitos definidos
 
 .filter() -> retorna todos los elementos que encuentre cumpliendo los
 requisitos definidos
 */
+
 const listaObjetos = [
     {nombre: "Leire", edad: 35},
     {nombre: "Gorka", edad: 34},
@@ -46,6 +52,7 @@ const listaObjetos = [
     {nombre: "Lucía", edad: 3},
     {nombre: "Amaia", edad: 29}
 ]
+
 const mayoresDe30 = listaObjetos.filter(obj => {
     if(obj.edad > 30){
         return true;
@@ -54,6 +61,7 @@ const mayoresDe30 = listaObjetos.filter(obj => {
         return false;
     }
 })
+
 console.log(mayoresDe30);
 // [ { nombre: 'Leire', edad: 35 }, { nombre: 'Gorka', edad: 34 } ]
 
@@ -77,7 +85,9 @@ console.log(newList);
 .reduce() -> permite "reducir" o "transformar" los elementos de un arreglo en
 uno nuevo y de único valor
 */
+
 const valores = [3, 56, 23, 5, 90, 100];
+
 const suma = valores.reduce((acumulado, current, i, arrayOriginal) => {
     console.log(acumulado);         // 3, 59, 82, 87, 177 -> no se ve el 277 porque no vuelve a entrar aquí
     console.log(current);           // 56, 23, 5, 90, 100
@@ -95,7 +105,8 @@ const biggest = valores.reduce((biggest, current) => current > biggest ? current
 console.log(biggest);               // 100
 
 
-// saber cuál es la palabra más larga
+/* saber cuál es la palabra más larga -> misma forma que antes, pero hecha en
+más líneas de código para ver que sigue funcionando */
 const names = ['naia', 'cristina', 'june', 'clara', 'veronica']
 const longest = names.reduce((longest, current) => {
     return current.length > longest.length ? current : longest
