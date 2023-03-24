@@ -20,7 +20,9 @@ function factorial(a){
 }
 
 
+
 // EXPORTACIÓN DE FUNCIONES
+
 module.exports = {
     suma,
     multiplica,
