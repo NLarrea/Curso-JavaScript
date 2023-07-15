@@ -113,3 +113,34 @@ const longest = names.reduce((longest, current) => {
 });
 
 console.log(longest);               // cristina
+
+
+// OTRO EJEMPLO DE .reduce()
+/**
+ * Queremos doblar los números pares de una lista y quedarnos solo con los que
+ * son mayores que 5.
+ * 
+ * Podríamos usar un .map() para doblar los valores y después un .filter() para
+ * quedarnos con los mayores de 5.
+ * 
+ * Existe una forma de hacerlo con .reduce() y evitarnos utilizar un Array
+ * intermedio o dos métodos consecutivos.
+ */
+
+const myNumbers = [1, 2, 3, 4, 5, 6, 7];
+
+const doubleEvenNumbersGreaterThanFive = myNumbers.reduce((accumulator, current) => {
+    const isEven = current % 2 === 0;
+    const isGreaterThanFive = doubled > 5;
+    const doubled = current * 2;
+
+    // si es par y mayor que 5 -> lo añadimos al array nuevo que se va a devolver
+    if (isEven && isGreaterThanFive) {
+        return accumulator.concat(doubled);
+    } else {
+        // si no se cumplen las condiciones, nos quedamos como estábamos
+        return accumulator;
+    }
+}, []); // valor inicial de .reduce() -> array vacío
+
+console.log(doubleEvenNumbersGreaterThanFive);      // [8, 12]
