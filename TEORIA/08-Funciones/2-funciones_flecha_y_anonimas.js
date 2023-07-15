@@ -45,3 +45,51 @@ function doble(valor) {
 }
 
 // es una buena práctica el declarar las funciones siempre primero
+
+
+// FUNCIONES
+
+console.log(suma(5, 10));   // 15 -> hoisting funciona
+
+function suma(a, b) {
+    return a + b;
+}
+
+console.log(suma(5, 10));   // 15
+
+
+// FUNCIÓN ANÓNIMA
+/**
+ * No puede ser usada antes de ser definida.
+ * Se guarda en una constante.
+ */
+
+// console.log(sumaAnonima(5, 10));    // error -> no puede ser llamada antes de la declaración
+
+const sumaAnonima = function (a, b) {
+    return a + b;
+}
+
+console.log(sumaAnonima(5, 10));    // 15
+
+
+// FUNCIÓN FLECHA
+/**
+ * No puede ser usada antes de ser definida.
+ * Sintaxis simple.
+ * Tiene el 'return' implícito.
+ */
+
+const sumaFlecha = (a, b) => {
+    return a + b;
+}
+
+console.log(sumaFlecha(5, 10));                 // 15
+
+
+const sumaFlechaReturnImplicito = (a, b) => a + b;
+console.log(sumaFlechaReturnImplicito(5, 10));  // 15
+
+
+const sumaFlechaMal = (a, b) => { a + b }
+console.log(sumaFlechaMal(5, 10));              // undefined -> return no implícito porque tiene {}
