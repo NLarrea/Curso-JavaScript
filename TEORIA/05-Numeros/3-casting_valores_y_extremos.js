@@ -18,58 +18,6 @@ no es común en absoluto y solo se usa en casos concretos
 
 
 
-// CREAR RANGOS DE NÚMEROS
-
-const range = (start, end) => Array.from('x'.repeat(end - start), (_, i) => start + i);
-
-/*
-creamos una función que guardamos en la constante "range". Lo que hace es crear
-un array de 'x' repitiendo las 'x' (end-start) veces. Pero en vez de devolver
-ese array, con su index (_, i) y una función flecha indica que "cambie el valor
-del array de 'x'" por "star + i", por lo que se crea un rango.
-
-(_, i) -> lo que hace es ignorar el valor de 'x' y quedarse solo con el index
-(como pasa con las funciones .forEach(), donde el primer parámetro es el
-currentValue y el segundo el index), lo que hace "_" es ignorar el valor
-*/
-
-/* Array.from(iterable, mapfn)
-iterable -> An iterable object to convert to an array.
-mapfn -> A mapping function to call on every element of the array.
-*/
-
-const rangeMejorado = (start, end) => {
-    // si solo se introduce un valor, end = 0
-    end = end | 0;
-    // start = valor más bajo, end = valor más alto
-    [start, end] = [Math.min(start, end), Math.max(start, end)]
-    return Array.from('x'.repeat(end - start), (_, i) => start + i)
-};
-
-
-
-// CREAR NÚMEROS ALEATORIOS ENTRE DOS VALORES
-
-const random = (minValue, maxValue) => {
-    // misma jugada que en 'rangeMejorado()'
-    maxValue = maxValue | 0;
-    [minValue, maxValue] = [Math.min(minValue, maxValue), Math.max(minValue, maxValue)];
-    // devolver aleatorio entre minValue (incluido) y maxValue (no incluido)
-    return Math.floor(Math.random() * (maxValue - minValue) + minValue);
-};
-
-// número aleatorio del 5 al 9 (ambos incluidos)
-console.log(random(10, 5));
-console.log(random(5, 10));
-
-// número aleatorio del 0 al 4 (ambos incluidos)
-console.log(random(5));
-
-// número aleatorio del -5 al 4 (ambos incluidos)
-console.log(random(-5, 5));
-
-
-
 // NaN = Not a Number - Infinity
 /*
 NaN -> significa que estamos intentando utilizar un método exclusivo de
